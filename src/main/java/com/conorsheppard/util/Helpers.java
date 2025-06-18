@@ -22,30 +22,6 @@ public class Helpers {
         System.out.println(Arrays.toString(plateau[count - 1]));
     }
 
-    public static <T> boolean isInBounds(T[][] array, int row, int col) {
-        return array != null &&
-                row >= 0 && row < array.length &&
-                array[row] != null &&
-                col >= 0 && col < array[row].length;
-    }
-
-    public static boolean isInBounds(int[][] array, int row, int col) {
-        return array != null &&
-                row >= 0 && row < array.length &&
-                col >= 0 && col < array[row].length;
-    }
-
-    public static boolean isInBounds(char[][] array, int row, int col) {
-        return array != null &&
-                row >= 0 && row < array.length &&
-                col >= 0 && col < array[row].length;
-    }
-
-    public static boolean isInBounds(double[][] array, int row, int col) {
-        return array != null &&
-                row >= 0 && row < array.length &&
-                col >= 0 && col < array[row].length;
-    }
 
     public static <T> void printMatrix(T[][] matrix) {
         Stream.of(matrix)

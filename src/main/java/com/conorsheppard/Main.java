@@ -1,5 +1,13 @@
+import com.conorsheppard.exercise.MarsRover;
+
 import static com.conorsheppard.util.Helpers.printMatrix;
 
 void main(){
-    printMatrix(new String[][]{{"asdf", ";ljk"}});
+    MarsRover rover1;
+    MarsRover rover2;
+
+    //[0, 0, 0, 0]
+    //[0, 0, 0, 0]
+    //[0, 0, E, 0]
+    //[N, 0, 0, 0]
 }
