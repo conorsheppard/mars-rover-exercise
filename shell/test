@@ -1,0 +1,15 @@
+#!/bin/zsh
+
+if [ $# -eq 0 ]; then
+    echo "Running all tests..."
+    mvn test
+elif [ $# -eq 1 ]; then
+    echo "Running all tests in class: $1"
+    mvn test -Dtest="$1"
+elif [ $# -eq 2 ]; then
+    echo "Running specific test: $2 in class: $1"
+    mvn test -Dtest="$1#$2"
+else
+    echo "Usage: $0 [TestClassName] [TestMethodName]"
+    exit 1
+fi
