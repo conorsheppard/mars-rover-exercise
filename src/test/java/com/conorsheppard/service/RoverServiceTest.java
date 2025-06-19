@@ -1,11 +1,11 @@
 package com.conorsheppard.service;
 
 import com.conorsheppard.exception.ObstacleInTheWayException;
+import com.conorsheppard.model.Point;
 import com.conorsheppard.model.Rover;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.awt.*;
 import java.util.UUID;
 
 import static com.conorsheppard.model.Direction.*;

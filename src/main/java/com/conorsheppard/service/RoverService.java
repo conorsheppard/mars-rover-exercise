@@ -3,10 +3,10 @@ package com.conorsheppard.service;
 import com.conorsheppard.exception.ObstacleInTheWayException;
 import com.conorsheppard.model.Board;
 import com.conorsheppard.model.Direction;
+import com.conorsheppard.model.Point;
 import com.conorsheppard.model.Rover;
 import org.springframework.stereotype.Service;
 
-import java.awt.*;
 import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.Optional;

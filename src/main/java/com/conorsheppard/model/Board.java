@@ -2,7 +2,6 @@ package com.conorsheppard.model;
 
 import lombok.Data;
 
-import java.awt.*;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -26,13 +25,13 @@ public class Board {
     }
 
     public synchronized boolean registerRover(Rover rover, Point p) {
-        if (!isInBounds(p.x, p.y) || isObstacle(p)) return false;
+        if (!isInBounds(p.x(), p.y()) || isObstacle(p)) return false;
         occupied.put(p, rover);
         return true;
     }
 
     public synchronized boolean moveRover(Rover rover, Point from, Point to) {
-        if (!isInBounds(to.x, to.y) || isObstacle(to)) return false;
+        if (!isInBounds(to.x(), to.y()) || isObstacle(to)) return false;
         occupied.remove(from);
         occupied.put(to, rover);
         return true;

@@ -1,9 +1,6 @@
 package com.conorsheppard.model;
 
 import lombok.Data;
-import lombok.ToString;
-
-import java.awt.*;
 
 @Data
 public class Rover {
@@ -18,12 +15,11 @@ public class Rover {
     }
 
     public boolean moveForward() {
-        Point current = new Point(position.x, position.y);
-        Point next = new Point(current.x + direction.x, current.y + direction.y);
+        Point current = new Point(position.x(), position.y());
+        Point next = new Point(current.x() + direction.x, current.y() + direction.y);
 
         if (board.moveRover(this, current, next)) {
-            position.x = next.x;
-            position.y = next.y;
+            this.setPosition(new Point(next.x(), next.y()));
             return true;
         }
         return false;

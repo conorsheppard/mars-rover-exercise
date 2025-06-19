@@ -37,19 +37,19 @@ make java-run
 ```
 Create rover request:
 ```shell
-curl -X POST http://localhost:8080/api/v1 \
+curl -w "\nStatus: %{http_code}\n" http://localhost:8080/api/v1 \                    
 -H "Content-Type: application/json" \
--d '{
-  "x": 0,
-  "y": 0,
-  "direction": "N"
-}'
+-d '{"x": 0, "y": 2, "direction": "N"}'
 ```
-Example response: `58a71ddf-b861-47e0-b060-a9dbf16dc575`
+Example response: 
+```shell
+d0c79900-5ee3-4a0c-84b1-0b809a88a50a
+Status: 201
+```
 
 Get rover request:
 ```shell
-curl http://localhost:8080/api/v1/{id}
+curl -w "\nStatus: %{http_code}\n" http://localhost:8080/api/v1/{id}
 ```
 Example response:
 ```shell
@@ -60,17 +60,19 @@ Example response:
   },
   "direction": "N"
 }
+Status: 200
 ```
 
 Move rover request:
 ```shell
-curl -X POST http://localhost:8080/api/v1/{id}/move
+curl -X POST -w "\nStatus: %{http_code}\n" http://localhost:8080/api/v1/{id}/move
 ```
 Example response:
 ```shell
 {
   "moved": true
 }
+Status: 200
 ```
 
 To execute all tests with Maven, run:

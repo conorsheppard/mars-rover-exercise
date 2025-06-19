@@ -2,6 +2,7 @@ package com.conorsheppard.controller;
 
 import com.conorsheppard.dto.RoverRequest;
 import com.conorsheppard.model.Direction;
+import com.conorsheppard.model.Point;
 import com.conorsheppard.model.Rover;
 import com.conorsheppard.service.RoverService;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -14,7 +15,6 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
 
-import java.awt.*;
 import java.util.UUID;
 
 import static org.hamcrest.Matchers.is;
@@ -93,8 +93,8 @@ class RoverControllerTest {
 
         mockMvc.perform(get("/api/v1/" + roverId))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.position.x", is(4.0)))
-                .andExpect(jsonPath("$.position.y", is(5.0)))
+                .andExpect(jsonPath("$.position.x", is(4)))
+                .andExpect(jsonPath("$.position.y", is(5)))
                 .andExpect(jsonPath("$.direction", is("N")));
     }
 }
